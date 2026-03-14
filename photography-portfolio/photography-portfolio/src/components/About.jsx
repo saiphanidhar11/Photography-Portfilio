@@ -3,9 +3,20 @@ import { motion } from 'framer-motion';
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal';
 
 const skills = [
-  'Portrait Photography', 'Wedding Photography', 'Landscape', 'Street Photography',
-  'Color Grading', 'Adobe Lightroom', 'Adobe Photoshop', 'Capture One',
-  'Drone Photography', 'Studio Lighting',
+  'Portrait Photography', 'Nature Photography', 'Landscape Artist', 
+  'Street Photography', 'Color Grading', 'Adobe Lightroom', 'Adobe Photoshop',
+  'CapCut', 'Drone Photography', 'Editing', 'Cinematic Videos', 'Travel Photography', 
+  'Wildlife Photography', 'Architecture Photography', 'Macro Photography', 
+  'Fashion Photography', 'Product Photography', 'Event Photography', 
+  'Night Photography', 'Astrophotography', 'Fine Art Photography', 
+  'Documentary Photography', 'Photo Retouching', 'Photo Manipulation', 
+  'Image Enhancement', 'Color Correction', 'Lightroom Presets', 
+  'Visual Storytelling', 'Short Film Creation', 'Video Editing', 
+  'Slow Motion Cinematography', 'Time-Lapse Photography', 'Hyperlapse Videos', 
+  'Drone Cinematography', 'Creative Direction', 'Studio Photography',
+   'Natural Light Photography', 'Outdoor Photography', 
+   'Minimalist Photography', 'Frame Composition', 'Rule of Thirds', 
+   'Depth of Field', 'Long Exposure', 'Golden Hour Photography', 'Blue Hour Photography'
 ];
 
 const stats = [
