@@ -75,10 +75,13 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <p className="text-gold font-body text-xs tracking-[0.4em] uppercase mb-4">
+            <p className="text-gold font-body text-sm lg:text-base tracking-[0.4em] uppercase mb-2">
+              sai phanidhar's
+            </p>
+            <p className="text-gold font-body text-sm lg:text-base tracking-[0.4em] uppercase mb-4">
               Photography Portfolio
             </p>
-            <h1 className="font-display text-5xl lg:text-7xl font-light text-cream leading-none">
+            <h1 className="font-display text-6xl lg:text-8xl font-light text-cream leading-none">
               Capturing
               <br />
               <WordCycler />
@@ -89,7 +92,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="font-body text-cream/50 text-lg max-w-md leading-relaxed"
+            className="font-body text-cream/50 text-xl max-w-lg leading-relaxed"
           >
             Award-winning photographer specializing in portraits and landscapes, focused on capturing emotion, light, and timeless visual stories.
           </motion.p>
