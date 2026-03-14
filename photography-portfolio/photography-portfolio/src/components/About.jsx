@@ -10,16 +10,17 @@ const skills = [
 
 const stats = [
   { value: 500, label: 'Photos Taken' },
-  { value: 150, label: 'Happy Clients' },
-  { value: 8, label: 'Years Experience' },
-  { value: 12, label: 'Awards Won' },
+  { value: 20, label: 'Happy Clients' },
+  { value: 4, label: 'Years Experience' },
+  { value: 1000000, label: 'Instagram Views' },
 ];
 
 function StatCounter({ stat }) {
   const ref = useCountUp(stat.value);
+  const displayValue = stat.value >= 1000000 ? '1M+' : '0+';
   return (
     <div className="text-center">
-      <div ref={ref} className="font-display text-4xl lg:text-5xl text-gold">0+</div>
+      <div ref={ref} className="font-display text-4xl lg:text-5xl text-gold">{displayValue}</div>
       <div className="font-body text-xs text-cream/40 tracking-[0.3em] uppercase mt-2">{stat.label}</div>
     </div>
   );
@@ -66,7 +67,7 @@ export default function About() {
               />
 
               <img
-                src="https://picsum.photos/seed/portrait_profile/340/420"
+                src="/Photo2.jpeg"
                 alt="Photographer"
                 className="w-full h-full object-cover relative z-10"
                 style={{ filter: 'contrast(1.05) saturate(0.85)' }}
@@ -77,32 +78,29 @@ export default function About() {
                 className="absolute -bottom-5 -right-5 z-20 bg-gold text-dark-bg p-5 font-body"
                 style={{ minWidth: 100 }}
               >
-                <div className="font-display text-3xl font-bold leading-none">8+</div>
-                <div className="text-xs tracking-widest uppercase leading-tight mt-1">Years<br />Active</div>
+                <div className="font-display text-3xl font-bold leading-none">4+</div>
+                <div className="text-xs tracking-widest uppercase leading-tight mt-1">Years<br />Experience</div>
               </div>
             </div>
           </motion.div>
 
           {/* Bio text */}
           <div ref={textRef} className="reveal">
-            <h3 className="font-display text-4xl text-cream font-light mb-2">Arjun Sharma</h3>
+            <h3 className="font-display text-4xl text-cream font-light mb-2">Sai Phanidhar P</h3>
             <p className="font-body text-gold text-sm tracking-widest uppercase mb-6">
-              Visual Storyteller · Mumbai, India
+              Visual Storyteller · Bengaluru, India
             </p>
             <p className="font-body text-cream/60 text-lg leading-relaxed mb-4 font-display italic">
-              "I don't just take photographs — I craft visual narratives that stop time
-              and speak without words."
+              "I don’t just capture photographs — I capture emotions, moments, and stories that live far beyond the frame."
             </p>
             <p className="font-body text-cream/50 leading-relaxed mb-4">
-              With over 8 years behind the lens, I've traveled across 30+ countries,
-              documenting the human condition, nature's grandeur, and love's most private moments.
-              My work has been featured in National Geographic India, Vogue, and exhibited
-              in galleries across Mumbai and Delhi.
+              My work focuses on capturing authentic stories — from powerful portraits and cinematic landscapes 
+              to spontaneous street moments. I believe that the most compelling photographs are the ones 
+              that feel natural, timeless, and emotionally alive.
             </p>
             <p className="font-body text-cream/40 leading-relaxed mb-8">
-              Every photograph I take is a meditation on light, shadow, and the fleeting beauty
-              of the present moment. I specialize in portraits, weddings, and landscape work —
-              always pursuing that one frame that says everything.
+              Photography for me is more than a craft; it is a way of observing the world with intention. 
+              Every frame I create is driven by light, composition, and the subtle emotions that exist in real moments.
             </p>
 
             {/* Skills */}
@@ -121,7 +119,7 @@ export default function About() {
 
         {/* Stats row */}
         <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gold/10 pt-16"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 border-t border-gold/10 pt-16"
         >
           {stats.map((stat) => (
             <StatCounter key={stat.label} stat={stat} />

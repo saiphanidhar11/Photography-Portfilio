@@ -50,10 +50,10 @@ function FlipCard({ photo, index }) {
               </div>
 
               {/* Corner decoration */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/50" />
-              <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/50" />
-              <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/50" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/50" />
+              <div className="absolute top-4 left-4 w-10 h-6 border-t border-l border-gold/50" />
+              <div className="absolute top-4 right-4 w-10 h-6 border-t border-r border-gold/50" />
+              <div className="absolute bottom-4 left-4 w-10 h-6 border-b border-l border-gold/50" />
+              <div className="absolute bottom-4 right-4 w-10 h-6 border-b border-r border-gold/50" />
             </div>
           </div>
 

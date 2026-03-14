@@ -4,7 +4,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { photos } from '../data/photos';
 import GalleryCard from './GalleryCard';
 
-const categories = ['All', 'Portrait', 'Landscape', 'Street', 'Wedding'];
+const categories = ['All'];
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');

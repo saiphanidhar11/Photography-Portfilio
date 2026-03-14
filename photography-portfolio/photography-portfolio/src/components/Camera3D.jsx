@@ -171,7 +171,7 @@ function CameraBody() {
 
 function CameraScene() {
   return (
-    <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.8} scale={1.5}>
+    <Float speed={1.5} rotationIntensity={1.5} floatIntensity={1.5} scale={.7}>
       <CameraBody />
     </Float>
   );

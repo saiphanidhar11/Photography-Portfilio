@@ -53,7 +53,7 @@ function BeforeAfterSlider({ pair }) {
         <img
           src={pair.after}
           alt="After edit"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain"
           draggable={false}
         />
 
@@ -70,7 +70,7 @@ function BeforeAfterSlider({ pair }) {
           <img
             src={pair.before}
             alt="Before edit"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain"
             style={{ filter: 'saturate(0.4) contrast(0.9)' }}
             draggable={false}
           />

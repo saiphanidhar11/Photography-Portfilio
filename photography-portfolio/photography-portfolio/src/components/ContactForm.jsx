@@ -64,9 +64,8 @@ export default function ContactForm() {
 
             <div className="space-y-5">
               {[
-                { icon: '📧', label: 'Email', value: 'arjun@lensandlight.in' },
-                { icon: '📱', label: 'Phone', value: '+91 98765 43210' },
-                { icon: '📍', label: 'Location', value: 'Mumbai, India · Worldwide' },
+                { icon: '📧', label: 'Email', value: 'saiphanidhar111@gmail.com' },
+                { icon: '📍', label: 'Location', value: 'Bangalore, India' },
                 { icon: '⏰', label: 'Response', value: 'Within 24 hours' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
