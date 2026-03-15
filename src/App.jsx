@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
+import Projects from './components/Projects';
 import BeforeAfter from './components/BeforeAfter';
-import Photo3DCard from './components/Photo3DCard';
 import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -36,8 +36,8 @@ export default function App() {
         <Navbar />
         <Hero />
         <Gallery />
+        <Projects />
         <BeforeAfter />
-        <Photo3DCard />
         <About />
         <ContactForm />
         <Footer />
