@@ -58,16 +58,24 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
+            whileHover={{ y: -20, scale: 1.02 }}
             className="relative flex justify-center"
           >
-            <div className="relative" style={{ width: 340, height: 420 }}>
+            <motion.div 
+              className="relative" 
+              style={{ width: 340, height: 420 }}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
               {/* Gold ring */}
-              <div
+              <motion.div
                 className="absolute -inset-3 rounded-sm opacity-60"
                 style={{
                   border: '1px solid rgba(201,168,76,0.4)',
                   transform: 'rotate(-3deg)',
                 }}
+                animate={{ boxShadow: ["0 0 20px rgba(201,168,76,0.2)", "0 0 40px rgba(201,168,76,0.4)", "0 0 20px rgba(201,168,76,0.2)"] }}
+                transition={{ duration: 3, repeat: Infinity }}
               />
               <div
                 className="absolute -inset-6 rounded-sm opacity-30"
@@ -77,22 +85,27 @@ export default function About() {
                 }}
               />
 
-              <img
+              <motion.img
                 src="/Photo2.jpeg"
                 alt="Photographer"
                 className="w-full h-full object-cover relative z-10"
                 style={{ filter: 'contrast(1.05) saturate(0.85)' }}
+                whileHover={{ filter: 'contrast(1.15) saturate(1)' }}
+                transition={{ duration: 0.3 }}
               />
 
               {/* Gold badge */}
-              <div
+              <motion.div
                 className="absolute -bottom-5 -right-5 z-20 bg-gold text-dark-bg p-5 font-body"
                 style={{ minWidth: 100 }}
+                animate={{ rotate: [0, 5, 0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                whileHover={{ scale: 1.1, rotate: 0 }}
               >
                 <div className="font-display text-3xl font-bold leading-none">4+</div>
                 <div className="text-xs tracking-widest uppercase leading-tight mt-1">Years<br />Experience</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           {/* Bio text */}
