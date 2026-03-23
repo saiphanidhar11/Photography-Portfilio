@@ -4,15 +4,17 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { photos } from '../data/photos';
 import GalleryCard from './GalleryCard';
 
-const categories = ['All'];
+const types = ['All', 'Photos', 'Videos'];
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeType, setActiveType] = useState('All');
   const titleRef = useScrollReveal();
 
-  const filtered = activeCategory === 'All'
+  const filtered = activeType === 'All'
     ? photos
-    : photos.filter((p) => p.category === activeCategory);
+    : activeType === 'Photos'
+    ? photos.filter((p) => p.type === 'photo')
+    : photos.filter((p) => p.type === 'video');
 
   return (
     <section id="gallery" className="py-28 bg-dark-bg">
@@ -29,17 +31,17 @@ export default function Gallery() {
 
         {/* Filter buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-14">
-          {categories.map((cat) => (
+          {types.map((type) => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
+              key={type}
+              onClick={() => setActiveType(type)}
               className={`font-body text-xs tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-300 ${
-                activeCategory === cat
+                activeType === type
                   ? 'bg-gold text-dark-bg border-gold'
                   : 'border-gold/30 text-cream/50 hover:border-gold hover:text-gold'
               }`}
             >
-              {cat}
+              {type}
             </button>
           ))}
         </div>

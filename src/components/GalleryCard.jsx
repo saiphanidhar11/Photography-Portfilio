@@ -4,8 +4,10 @@ export default function GalleryCard({ photo }) {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState('');
   const [hovered, setHovered] = useState(false);
+  const isVideo = photo.type === 'video';
 
   const handleMouseMove = (e) => {
+    if (isVideo) return; // Disable 3D effect for videos
     const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -28,7 +30,7 @@ export default function GalleryCard({ photo }) {
   return (
     <div
       ref={cardRef}
-      className="relative overflow-hidden cursor-pointer rounded-sm"
+      className="relative overflow-hidden cursor-pointer rounded-sm group"
       style={{
         transform: transform,
         transition: hovered ? 'transform 0.1s ease' : 'transform 0.5s ease',
@@ -38,17 +40,49 @@ export default function GalleryCard({ photo }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Image */}
-      <img
-        src={photo.src}
-        alt={photo.title}
-        className="w-full h-full object-cover transition-transform duration-700"
-        style={{
-          minHeight: '200px',
-          transform: hovered ? 'scale(1.08)' : 'scale(1)',
-        }}
-        loading="lazy"
-      />
+      {/* Video Player */}
+      {isVideo ? (
+        <video
+          src={photo.src}
+          className="w-full h-full object-cover transition-transform duration-700"
+          style={{
+            minHeight: '200px',
+            transform: hovered ? 'scale(1.08)' : 'scale(1)',
+          }}
+          autoPlay
+          loop
+          muted
+        />
+      ) : (
+        /* Image */
+        <img
+          src={photo.src}
+          alt={photo.title}
+          className="w-full h-full object-cover transition-transform duration-700"
+          style={{
+            minHeight: '200px',
+            transform: hovered ? 'scale(1.08)' : 'scale(1)',
+          }}
+          loading="lazy"
+        />
+      )}
+
+      {/* Play button overlay for videos */}
+      {isVideo && (
+        <div
+          className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+          style={{
+            opacity: hovered ? 0 : 0,
+            background: 'transparent',
+          }}
+        >
+          <div className="w-16 h-16 bg-gold/80 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-dark-bg ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      )}
 
       {/* Gold border glow on hover */}
       <div
