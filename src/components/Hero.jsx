@@ -94,7 +94,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="font-body text-cream/50 text-xl max-w-lg leading-relaxed"
           >
-            Award-winning photographer specializing in portraits and landscapes, focused on capturing emotion, light, and timeless visual stories.
+          Photographer known for crafting timeless, emotionally rich portraits and landscapes, where light and storytelling converge into unforgettable visual art.
           </motion.p>
         </div>
 
